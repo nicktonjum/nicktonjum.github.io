@@ -49,6 +49,17 @@ var path = "cursor.gif" // URL of your image
 
 var standardbody=(document.compatMode=="CSS1Compat")? document.documentElement : document.body //create reference to common "body" across doctypes
 var i,d = 0
+var colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+
+		var i = 1;
+
+		window.setInterval(function(){
+			document.body.style.backgroundColor = colors[i];
+			i++;
+			if (i === colors.length){
+				i=0;
+			}
+		}, 250);
 
 function initTrail() { // prepares the script
 	images = new Array() // prepare the image array

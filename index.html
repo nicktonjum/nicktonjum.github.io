@@ -71,8 +71,6 @@ function initTrail() { // prepares the script
 	trail()
 }
 function trail() { // trailing function
-	       var clicker = document.getElementById("clicker");
-       clicker.play();
 	
 	for (i = 0; i < images.length; i++) { // for every div/layer
 		document.getElementById("obj" + i).style.top = storage[d]+'px' // the Y-coordinate
@@ -107,7 +105,10 @@ function processEvent(e) { // catches and processes the mousemove event
 }
 
 	initTrail() 
+	var clicker = document.getElementById("clicker");
 	document.onmousemove = processEvent // start capturing
+	document.onmousemove = clicker.play();
+	    
 	</script>
 	  
 	  <h1 style="text-align: center;"><span style="color: #000000;">Ur Mom Gay</span></h1>

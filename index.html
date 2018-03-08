@@ -46,7 +46,7 @@ background-size: cover;
 </style>
   </head>
   <body>
-	  
+	  <audio id="clicker" src="click.ogg" ></audio>
     <script> 
 
 var trailLength = 1 // The length of trail (8 by default; put more for longer "tail")
@@ -71,6 +71,9 @@ function initTrail() { // prepares the script
 	trail()
 }
 function trail() { // trailing function
+	       var clicker = document.getElementById("clicker");
+       clicker.play();
+	
 	for (i = 0; i < images.length; i++) { // for every div/layer
 		document.getElementById("obj" + i).style.top = storage[d]+'px' // the Y-coordinate
 		document.getElementById("obj" + i).style.left = + storage[d+1]+'px' // the X-coordinate

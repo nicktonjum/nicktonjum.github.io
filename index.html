@@ -113,24 +113,19 @@ function processEvent(e) { // catches and processes the mousemove event
 	  <h1 style="text-align: center;"><span style="color: #000000;">Ur Mom Gay</span></h1>
 	  <script>
 		  
-//This will play a random sound
 function playRandomSound(){
-
-      //An array to house all of the URLs of your sounds
-      var sounds = [ "/music/1.mp3",
-                     "/music/2.mp3",
-                     "/music/3.mp3",
-                     "/music/4.mp3",
-                     "/music/5.mp3",
-                     "/music/6.mp3",
-                     "/music/7.mp3",
-                     "/music/8.mp3"];
+     var sounds = [
+        "http://www.soundjay.com/button/button-1.wav",
+        "http://www.soundjay.com/button/button-2.wav",
+        "http://www.soundjay.com/button/button-3.wav",
+        "http://www.soundjay.com/button/button-4.wav",
+        "http://www.soundjay.com/button/button-5.wav",
+        "http://www.soundjay.com/button/button-6.wav",
+        "http://www.soundjay.com/button/button-7.wav",
+        "http://www.soundjay.com/button/button-8.wav"];
       
-      //This line will select a random sound to play out of your provided URLS
-      var soundFile = sounds[Math.floor(Math.random()*sounds.length)];
-      
-      //Find the player element that you created and generate an embed file to play the sound within it
-      document.getElementById("player").innerHTML="<embed src=\""+soundfile+"\" hidden=\"true\" autostart=\"true\" loop=\"false\" />";
+     var soundFile = sounds[Math.floor(Math.random()*sounds.length)];
+     document.getElementById("player").innerHTML="<embed src=\""+soundFile+"\" hidden=\"true\" autostart=\"true\" loop=\"false\" />";
 }
 		  
    </script>

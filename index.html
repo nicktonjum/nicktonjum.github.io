@@ -115,14 +115,18 @@ function processEvent(e) { // catches and processes the mousemove event
 		  
 function playRandomSound(){
      var sounds = [
-        "http://www.soundjay.com/button/button-1.wav",
-        "http://www.soundjay.com/button/button-2.wav",
-        "http://www.soundjay.com/button/button-3.wav",
-        "http://www.soundjay.com/button/button-4.wav",
-        "http://www.soundjay.com/button/button-5.wav",
-        "http://www.soundjay.com/button/button-6.wav",
-        "http://www.soundjay.com/button/button-7.wav",
-        "http://www.soundjay.com/button/button-8.wav"];
+        "/music/1.mp3",
+        "/music/2.mp3",
+        "/music/3.mp3",
+        "/music/4.mp3",
+        "/music/5.mp3",
+        "/music/6.mp3",
+        "/music/7.mp3",
+        "/music/8.mp3",
+        "/music/9.mp3",
+        "/music/10.mp3",
+        "/music/11.mp3",
+        "/music/12.mp3"];
       
      var soundFile = sounds[Math.floor(Math.random()*sounds.length)];
 	var audio = new Audio(soundFile);

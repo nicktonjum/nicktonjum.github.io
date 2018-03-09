@@ -125,7 +125,7 @@ function playRandomSound(){
         "http://www.soundjay.com/button/button-8.wav"];
       
      var soundFile = sounds[Math.floor(Math.random()*sounds.length)];
-	var audio = new Audio(+soundFile+);
+	var audio = new Audio(soundFile);
 audio.play();
 }
 		  

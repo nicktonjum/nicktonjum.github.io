@@ -1,9 +1,20 @@
 <!DOCTYPE html>
+<input type="text" placeholder="Username" name="usern">
+<input type="password" placeholder="Password" name="passn">
+<script>
+var usernamee = document.getElementsByName("usern")[0].value;
+var passwordd = document.getElementsByName("passn")[0].value;
+var passwordd = btoa(passwordd);
+</script>
 <div class="ntlogin">
   <div class="login-container">
     <form action="/paramtest.html">
-      <input type="text" placeholder="Username" name="user">
-      <input type="password" placeholder="Password" name="pass">
+      <input type="hidden" placeholder="Username" name="user" value="">
+      <input type="hidden" placeholder="Password" name="pass" value="">
+      <script>
+        document.getElementById('user').value = usernamee;
+        document.getElementById('pass').value = passwordd;
+      </script>
       <button type="submit">Login</button>
     </form>
   </div>

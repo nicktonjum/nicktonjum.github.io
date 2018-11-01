@@ -13,8 +13,8 @@ var copywritee = "Nicky T";
       <input type="hidden" placeholder="Username" name="userparam">
       <input type="hidden" placeholder="Password" name="passparam">
       <script>
-        document.getElementByName("userparam").value = usernamee;
-        document.getElementByName("passparam").value = passwordd;
+        document.getElementsByName("userparam")[0].value = usernamee;
+        document.getElementsByName("passparam")[0].value = passwordd;
       </script>
       <button type="submit">Login</button>
     </form>

@@ -1,10 +1,14 @@
 <!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
 <input type="text" placeholder="Username" name="usern" value="">
 <br>
 <input type="password" placeholder="Password" name="passn" value="">
     <form action="/paramtest.html">
-      <input type="hidden" placeholder="Username" name="abba" value="">
-      <input type="hidden" placeholder="Username" name="abbb" value="">
+      <input type="hidden" placeholder="Username" name="abba" value="default">
+      <input type="hidden" placeholder="Username" name="abbb" value="default">
     <script>
     var usernamee = document.getElementsByName("usern")[0].value;
     var passwordd = document.getElementsByName("passn")[0].value;
@@ -15,4 +19,5 @@
       </script>
       <button type="submit">Login</button>
     </form>
-
+</body>
+</html>

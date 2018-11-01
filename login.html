@@ -3,21 +3,10 @@
 <head>
 </head>
 <body>
-<input type="text" placeholder="Username" name="usern" value="">
-<br>
-<input type="password" placeholder="Password" name="passn" value="">
-    <form action="/paramtest.html">
-      <input type="hidden" placeholder="Username" name="abba" value="default">
-      <input type="hidden" placeholder="Username" name="abbb" value="default">
-    <script>
-    var usernamee = document.getElementsByName("usern")[0].value;
-    var passwordd = document.getElementsByName("passn")[0].value;
-    var encpass = btoa(passwordd);
-    var copywritee = "Nicky T";
-    document.getElementsByName("abba")[0].value = usernamee;
-    document.getElementsByName("abbb")[0].value = encpass;
-      </script>
-      <button type="submit">Login</button>
-    </form>
+<form action="/paramtest.html" method="post" enctype="application/x-www-form-urlencoded">
+  Username: <input type="text" name="user"><br>
+  Password: <input type="password" name="pass"><br>
+  <input type="submit" value="Submit">
+</form>
 </body>
 </html>

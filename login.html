@@ -2,19 +2,19 @@
 <input type="text" placeholder="Username" name="usern" value="">
 <input type="password" placeholder="Password" name="passn" value="">
 <script>
-var usernamee = document.getElementsByName("usern").value;
-var passwordd = document.getElementsByName("passn").value;
+var usernamee = document.getElementsByName("usern")[0].value;
+var passwordd = document.getElementsByName("passn")[0].value;
 var encpass = btoa(passwordd);
 var copywritee = "Nicky T";
 </script>
 <div class="ntlogin">
   <div class="login-container">
     <form action="/paramtest.html">
-      <input type="hidden" placeholder="Username" name="userparam">
-      <input type="hidden" placeholder="Password" name="passparam">
+      <input type="hidden" placeholder="Username" name="user">
+      <input type="hidden" placeholder="Password" name="pass">
       <script>
-        document.getElementsByName("userparam")[0].value = usernamee;
-        document.getElementsByName("passparam")[0].value = passwordd;
+        document.getElementsByName("user")[0].value = usernamee;
+        document.getElementsByName("pass")[0].value = passwordd;
       </script>
       <button type="submit">Login</button>
     </form>

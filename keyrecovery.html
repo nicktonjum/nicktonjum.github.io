@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+  <meta charset="UTF-8">
+  <script language="JavaScript">
+    function redirectt() {
+        var gottenid = document.getElementById("keyy").value;
+        var splitstring = gottenid.split("|");
+        var passtodec = splitstring[0];
+        var usertodec = splitstring[1];
+        var decodeduser = btoa(usertodec);
+        var decodepassfirst = btoa(passtodec);
+        var decodedpass = btoa(decodepassfirst);
+        document.getElementById('displayuser').innerHTML = decodeduser;
+        document.getElementById('displaypass').innerHTML = decodedpass;
+    }
+  </script>
+
+  </head>
+<body>
+
+  <form>
+    <input type="text" placeholder="Enter Key" name="keyy" id="keyy">
+  </form>
+
+  <input type="submit" onclick="decodekey();"><br/>
+  <br>
+  <br>
+  <p>Your Info:</p>
+  <p>Username: <span id='displayuser'></span></p>
+  <p>Password: <span id='displaypass'></span></p>
+</body>
+</html>

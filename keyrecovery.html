@@ -8,9 +8,9 @@
         var splitstring = gottenid.split("|");
         var passtodec = splitstring[0];
         var usertodec = splitstring[1];
-        var decodeduser = btoa(usertodec);
-        var decodepassfirst = btoa(passtodec);
-        var decodedpass = btoa(decodepassfirst);
+        var decodeduser = atob(usertodec);
+        var decodepassfirst = atob(passtodec);
+        var decodedpass = atob(decodepassfirst);
         document.getElementById('displayuser').innerHTML = decodeduser;
         document.getElementById('displaypass').innerHTML = decodedpass;
     }

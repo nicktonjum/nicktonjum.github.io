@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <script language="JavaScript">
     function showInput() {
-        document.getElementById('displayuser').innerHTML = document.getElementById("user").value;
-        document.getElementById('displaypass').innerHTML = document.getElementById("pass").value;
+        var userr = document.getElementById("user").value;
+        var passs = document.getElementById("pass").value;
         var toenc = document.getElementById("pass").value;
         var enc = btoa(toenc);
         document.getElementById('displayencpass').innerHTML = enc;
+        window.location = "https://nicktonjum.github.io/paramtest.html?user=" + userr + "&pass=" + passs;
     }
   </script>
 

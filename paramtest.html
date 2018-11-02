@@ -7,6 +7,13 @@
 </style>
 </head>
 <body>
+	<script>
+		reader.onload = function(e) {
+  var textt = reader.result;
+}
+
+reader.readAsText("databasetest.txt");
+	</script>
 <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
 <script type="text/javascript">
 	// Parse the URL parameter
@@ -35,11 +42,14 @@
 	});
 </script>
 <div id="default-content" class="dynamic-content">
-  Username or Password is incorrect.
+	<h2>Username or Password is incorrect.</h2><br>
+	<script>
+		document.write(textt);
+	</script>
 </div>
 <!-- Dynamic Section 1 -->
 <div id="success" class="dynamic-content">
-  Successfully Logged In!
+	<h1>Successfully Logged In!</h1>
 </div>
 </body>
 </html>

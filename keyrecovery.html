@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head lang="en">
+    <style>
+.spoiler{ 
+  color: black; 
+  background-color:black;
+}
+
+.spoiler:hover{
+  background-color:white;
+}
+.spoiler2{ 
+  color: black; 
+  background-color:black;
+}
+
+.spoiler2:hover{
+  background-color:white;
+}
+    </style>
   <meta charset="UTF-8">
   <script language="JavaScript">
     function redirectt() {
@@ -20,14 +38,14 @@
 <body>
 
   <form>
-    <input type="text" placeholder="Enter Key" name="keyy" id="keyy">
+    <input type="text" placeholder="Enter Recovery Key:" name="keyy" id="keyy">
   </form>
 
   <input type="submit" onclick="redirectt();"><br/>
   <br>
   <br>
-  <p>Your Info:</p>
-  <p>Username: <span id='displayuser'></span></p>
-  <p>Password: <span id='displaypass'></span></p>
+  <p>Your Info (hover to view):</p>
+  <p>Username: <span class="spoiler" id='displayuser'></span></p>
+  <p>Password: <span class="spoiler2" id='displaypass'></span></p>
 </body>
 </html>

@@ -23,22 +23,12 @@
 	var dynamicContent = getParameterByName('dc');
 	var username = getParameterByName('user');
 	var password = getParameterByName('pass');
+	var decryptedpassword = atob(password)
  
 	 $(document).ready(function() {
- 
-		// Check if the URL parameter is apples
-		if (username == 'nicktonjum' && password == 'nick9924') {
-			$('#apples').show();
+		if (username == 'nicktonjum' && decryptedpassword == 'nickpasstest') {
+			$('#success').show();
 		} 
-		// Check if the URL parameter is oranges
-		else if (dynamicContent == 'oranges') {
-			$('#oranges').show();
-		} 
-		// Check if the URL parameter is bananas
-		else if (dynamicContent == 'bananas') {
-			$('#bananas').show();
-		} 
-		// Check if the URL parmeter is empty or not defined, display default content
 		else {
 			$('#default-content').show();
 		}
@@ -48,16 +38,8 @@
   Username or Password is incorrect.
 </div>
 <!-- Dynamic Section 1 -->
-<div id="apples" class="dynamic-content">
+<div id="success" class="dynamic-content">
   Successfully Logged In!
-</div>
-<!-- Dynamic Section 2 -->
-<div id="oranges" class="dynamic-content">
-  I like oranges
-</div>
-<!-- Dynamic Section 3 -->
-<div id="bananas" class="dynamic-content">
-  I like bananas
 </div>
 </body>
 </html>

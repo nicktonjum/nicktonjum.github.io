@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <html>
-<head>
-</head>
-<body>
-<form>
-  Username: <input type="text" name="user"><br>
-  Password: <input type="password" name="pass"><br>
-  <input type="submit">
-</form>
-  <script>
-    var serializedform = document.getElementsByName("pass")[0].value;
+  <head lang="en">
+  <meta charset="UTF-8">
+  <script language="JavaScript">
+    function showInput() {
+        document.getElementById('displayuser').innerHTML = document.getElementById("user").value;
+        document.getElementById('displaypass').innerHTML = document.getElementById("pass").value;
+        var toenc = document.getElementById("pass").value;
+        var enc = btoa(toenc);
+        document.getElementById('displayencpass').innerHTML = enc;
+    }
   </script>
-  <h1>
-    <script>
-      document.write(serializedform)
-    </script>
-    </h1>
+
+  </head>
+<body>
+
+  <form>
+    <label><b>Enter a Message</b></label>
+    <input type="text" name="Username" id="user">
+    <input type="password" name="Password" id="pass">
+  </form>
+
+  <input type="submit" onclick="showInput();"><br/>
+  <label>Your input: </label>
+  <p><span id='displayuser'></span></p>
+  <p><span id='displaypass'></span></p>
+  <p><span id='displayencpass'></span></p>
 </body>
 </html>

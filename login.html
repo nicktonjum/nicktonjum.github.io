@@ -3,13 +3,13 @@
   <head lang="en">
   <meta charset="UTF-8">
   <script language="JavaScript">
-    function showInput() {
+    function redirectt() {
         var userr = document.getElementById("user").value;
         var passs = document.getElementById("pass").value;
         var toenc = document.getElementById("pass").value;
         var enc = btoa(toenc);
         document.getElementById('displayencpass').innerHTML = enc;
-        window.location = "https://nicktonjum.github.io/paramtest.html?user=" + userr + "&pass=" + passs;
+        window.location = "https://nicktonjum.github.io/paramtest.html?user=" + userr + "&pass=" + enc;
     }
   </script>
 
@@ -21,10 +21,6 @@
     <input type="password" placeholder="Password" name="Password" id="pass">
   </form>
 
-  <input type="submit" onclick="showInput();"><br/>
-  <label>Your input: </label>
-  <p><span id='displayuser'></span></p>
-  <p><span id='displaypass'></span></p>
-  <p><span id='displayencpass'></span></p>
+  <input type="submit" onclick="redirectt();"><br/>
 </body>
 </html>

@@ -7,14 +7,6 @@
 </style>
 </head>
 <body>
-	<script>
-		var reader = new FileReader();
-		reader.onload = function(e) {
-  var textt = reader.result;
-}
-
-reader.readAsText("databasetest.txt");
-	</script>
 <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
 <script type="text/javascript">
 	// Parse the URL parameter
@@ -33,6 +25,7 @@ reader.readAsText("databasetest.txt");
 	var password = getParameterByName('pass');
 	var encrypteddpassword = btoa(password);
 	var encrypteddusername = btoa(username);
+	var basekey = "(" + encrypteddpassword + "|" + encrypteddusername + ")";
  
 	 $(document).ready(function() {
 		if (encrypteddusername == 'bmlja3Rvbmp1bQ==' && encrypteddpassword == 'Ym1samF6azVNalE9') {
@@ -45,13 +38,18 @@ reader.readAsText("databasetest.txt");
 </script>
 <div id="default-content" class="dynamic-content">
 	<h2>Username or Password is incorrect.</h2><br>
+	<h3>Given Key (Incorrect):<h3>
 	<script>
-		document.write(textt);
+		document.write(basekey);
 	</script>
 </div>
 <!-- Dynamic Section 1 -->
 <div id="success" class="dynamic-content">
 	<h1>Successfully Logged In!</h1>
+	<h3>Key:<h3>
+	<script>
+		document.write(basekey);
+	</script>
 </div>
 </body>
 </html>

@@ -31,10 +31,11 @@ reader.readAsText("databasetest.txt");
 	var dynamicContent = getParameterByName('dc');
 	var username = getParameterByName('user');
 	var password = getParameterByName('pass');
-	var decryptedpassword = atob(password)
+	var encrypteddpassword = btoa(password);
+	var encrypteddusername = btoa(username);
  
 	 $(document).ready(function() {
-		if (username == 'nicktonjum' && decryptedpassword == 'nickpasstest') {
+		if (encrypteddusername == 'bmlja3Rvbmp1bQ==' && encrypteddpassword == 'Ym1samF6azVNalE9') {
 			$('#success').show();
 		} 
 		else {

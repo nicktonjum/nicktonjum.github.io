@@ -8,7 +8,7 @@
 var focused = true;
 	
 function onBlur() {
-	if(iframefocused == "false" || focused == "false")
+	if(iframefocused == false || focused == false)
 {
 	window.location = "http://www.google.com";
 }
@@ -24,10 +24,8 @@ function checkFocus() {
   }
 }
 
-window.setInterval(checkFocus, 1000); 
-window.setInterval(onBlur, 1000); 
 	
-
+function checkWhole() {
 window.onfocus = function() {
     focused = true;
     console.log("Window Focus");
@@ -35,7 +33,11 @@ window.onfocus = function() {
 window.onblur = function() {
     focused = false;
     console.log("Window UnFocus");
-};
+  };
+}
+window.setInterval(checkFocus, 1000); 
+window.setInterval(onBlur, 1000); 
+window.setInterval(checkWhole, 1000); 
 </script>
 
 </head>

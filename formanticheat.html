@@ -17,8 +17,10 @@ function onBlur() {
 function checkFocus() {
   if(document.activeElement == document.getElementsByTagName("iframe")[0]) {
     iframefocused = true;
+	  console.log("IFrame Focus");
   } else {
     iframefocused = false;
+	  console.log("IFrame UnFocus");
   }
 }
 
@@ -28,9 +30,11 @@ window.setInterval(onBlur, 1000);
 
 window.onfocus = function() {
     focused = true;
+    console.log("Window Focus");
 };
 window.onblur = function() {
     focused = false;
+    console.log("Window UnFocus");
 };
 </script>
 

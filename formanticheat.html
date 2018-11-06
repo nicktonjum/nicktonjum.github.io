@@ -9,7 +9,7 @@ var focused = true;
 var iframefocused = true;
 	
 function onBlur() {
-	if(iframefocused == false || focused == false)
+	if(iframefocused + focused == 0)
 {
 	window.location = "http://www.google.com";
 }
@@ -17,10 +17,10 @@ function onBlur() {
 	
 function checkFocus() {
   if(document.activeElement == document.getElementsByTagName("iframe")[0]) {
-    iframefocused = true;
+    iframefocused = 1;
 	  console.log("IFrame Focus");
   } else {
-    iframefocused = false;
+    iframefocused = 0;
 	  console.log("IFrame UnFocus");
   }
 }
@@ -28,11 +28,11 @@ function checkFocus() {
 	
 function checkWhole() {
 window.onfocus = function() {
-    focused = true;
+    focused = 1;
     console.log("Window Focus");
 };
 window.onblur = function() {
-    focused = false;
+    focused = 0;
     console.log("Window UnFocus");
   };
 }

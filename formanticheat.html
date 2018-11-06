@@ -13,8 +13,6 @@ function onBlur() {
 	window.location = "http://www.google.com";
 }
 };
-
-document.getElementById("mainiframe").contentWindow.onblur=onBlur();
 	
 function checkFocus() {
   if(document.activeElement == document.getElementsByTagName("iframe")[0]) {

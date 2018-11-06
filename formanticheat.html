@@ -9,10 +9,12 @@ function onBlur() {
 	window.location = "http://www.google.com";
 };
 
+document.getElementById("mainiframe").contentWindow.onblur=onBlur();
+	
 </script>
 
 </head>
-<body class="focused">
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSco-UoBCCZlBa8PwfMZ7AZQE686Vby6stzV0GNHiWci4PpOJQ/viewform?embedded=true" onblur="onBlur()" width="640" height="627" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+<body>
+<iframe id="mainiframe" src="https://docs.google.com/forms/d/e/1FAIpQLSco-UoBCCZlBa8PwfMZ7AZQE686Vby6stzV0GNHiWci4PpOJQ/viewform?embedded=true" onblur="onBlur()" width="640" height="627" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
 </body>
 </html>

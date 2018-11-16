@@ -51,9 +51,29 @@ text-transform: none;
   100% {
     background-position: 94% 0%; } }
     </style>
+    <script>
+    function GetURLParameter(sParam)
+{
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
+    for (var i = 0; i < sURLVariables.length; i++) 
+    {
+        var sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] == sParam) 
+        {
+            return sParameterName[1];
+        }
+    }
+}
+        var number = GetURLParameter('name');
+    </script>
 </head>
 <body>
-<h1 align="center" class="raunchytwo">Jacie</h1>
-<p align="center" class="raunchy">You're fucking gay</p>
+<h1 align="center" class="raunchytwo">
+    <script>
+        document.write(number)
+    </script>
+        </h1>
+<p align="center" class="raunchy">You're a dummy</p>
 </body>
 </html>

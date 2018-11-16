@@ -65,15 +65,20 @@ text-transform: none;
         }
     }
 }
-        var number = decodeURI(GetURLParameter('name'));
+        var firstline = decodeURI(GetURLParameter('line1'));
+        var secondline = decodeURI(GetURLParameter('line2'));
     </script>
 </head>
 <body>
 <h1 align="center" class="raunchytwo">
     <script>
-        document.write(number)
+        document.write(firstline)
     </script>
         </h1>
-<p align="center" class="raunchy">You're a dummy</p>
+<p align="center" class="raunchy">
+    <script>
+        document.write(secondline)
+    </script>
+    </p>
 </body>
 </html>

@@ -22,6 +22,9 @@ font-style: normal;
 font-variant: normal;
 text-transform: none;
 }
+.outlinecontainer {
+    outline: 2px dashed white;
+}
 .raunchytwo {
 font-family: "Arial Black", Gadget, sans-serif;
 font-size: 120px;
@@ -89,13 +92,16 @@ text-transform: none;
     </script>
     </p>
     <div class="footer">
-		<form action="/action_page.php">
-  Make your own!:   Line 1: 
+		<form action="/rainbow.html">
+  Line 1: 
   <input type="text" name="line1" value="">
    Line 2:
   <input type="text" name="line2" value="">
   <input type="submit" value="Generate!">
 </form> 
+	    <br>
+	    <br>
+	    <div class="outlinecontainer">Send to a Friend!: <script>document.write("https://nicktonjum.github.io/rainbow.html?line1=" + GetURLParameter('line1') + "&" + GetURLParameter('line2') & ""</script></div>
 	</div>
 </body>
 </html>

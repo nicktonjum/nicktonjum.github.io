@@ -66,6 +66,7 @@ text-transform: none;
 	    function replacespace() {
     var p = document.getElementById('inputformm')
     p.value = p.value.replace(/\s+/g, 'SPACE');
+		    
 }
     function GetURLParameter(sParam)
 {
@@ -80,8 +81,11 @@ text-transform: none;
         }
     }
 }
-        var firstline = decodeURI(GetURLParameter('line1')).replace(/\s+/g, 'SPACE');
-        var secondline = decodeURI(GetURLParameter('line2')).replace(/\s+/g, 'SPACE');
+        var firsttline = decodeURI(GetURLParameter('line1'));
+        var seconddline = decodeURI(GetURLParameter('line2'));
+	    var firstline = firsttline.split('+').join(' ');
+	    var secondline = seconddline.split('+').join(' ');
+	
 	
     </script>
 </head>

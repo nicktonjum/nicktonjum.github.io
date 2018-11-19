@@ -78,7 +78,12 @@ text-transform: none;
 }
         var firstline = decodeURI(GetURLParameter('line1'));
         var secondline = decodeURI(GetURLParameter('line2'));
+	var urll = window.location.href;
     </script>
+	<script>
+document.getElementById("dispurl").innerHTML = 
+"Send to a Friend: " + window.location.href;
+</script>
 </head>
 <body>
 <h1 align="center" class="raunchytwo">
@@ -101,7 +106,7 @@ text-transform: none;
 </form> 
 	    <br>
 	    <br>
-	    <div class="outlinecontainer"><script>document.write('https://nicktonjum.github.io/rainbow.html?line1=' + GetURLParameter('line1') + '&' + GetURLParameter('line2') & '')</script></div>
+	    <div class="outlinecontainer"><p id="dispurl"></p></div>
 	</div>
 </body>
 </html>

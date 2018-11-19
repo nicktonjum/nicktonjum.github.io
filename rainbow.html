@@ -80,8 +80,9 @@ text-transform: none;
         }
     }
 }
-        var firstline = decodeURI(GetURLParameter('line1'));
-        var secondline = decodeURI(GetURLParameter('line2'));
+        var firstline = decodeURI(GetURLParameter('line1')).replace(/\s+/g, 'SPACE');
+        var secondline = decodeURI(GetURLParameter('line2')).replace(/\s+/g, 'SPACE');
+	
     </script>
 </head>
 <body>

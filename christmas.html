@@ -1,5 +1,19 @@
 <!DOCTYPE html>
 <head>
+<style>
+  .headd {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  border: none;
+  font: normal 76px/1 "bubblegum-sans", Helvetica, sans-serif;
+  color: #0096ff;
+  text-align: center;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  text-shadow: 4px 4px 6px rgba(0,0,0,0.5) ;
+}
+  </style>
 <script>
 today=new Date();
 var cmas=new Date(today.getFullYear(), 11, 25);
@@ -13,6 +27,6 @@ console.log(Math.ceil((cmas.getTime()-today.getTime())/(one_day))+
 </script>
 </head>
 <body>
-<h1><script>document.write(Math.ceil((cmas.getTime()-today.getTime())/(one_day))+
+<h1 class="headd"><script>document.write(Math.ceil((cmas.getTime()-today.getTime())/(one_day))+
 " sleeps until Christmas!")</script></h1>
 </body>

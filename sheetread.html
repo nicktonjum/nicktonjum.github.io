@@ -1,73 +1,221 @@
+<html>
+<head>
+<style>
+        table, th, td 
+        {
+            margin:10px 0;
+            border:solid 1px #333;
+            padding:2px 4px;
+            font:15px Verdana;
+        }
+        th {
+            font-weight:bold;
+        }
+		
+#loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid blue;
+  border-bottom: 16px solid blue;
+  width: 60px;
+  height: 60px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  visibility:hidden;
+}
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width,initial-scale=1" name="viewport" />
-    <meta content="Pricing Copy V2 App - Sheetsu" name="description" />
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
 
-    <title>Pricing Copy V2 App - Sheetsu</title>
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+		
+    </style>
 
-    <link rel="stylesheet" media="all" href="/assets/readymades/application-4c21de822af5b572ff46cb42f860717134ed465b6ff0fa5005d1a3ffaf4685b6.css" data-turbolinks-track="true" />
-    <script src="/assets/readymades/application-0f857e8bd3f5edc46724d446354d7143176110aad0e6c7f02e8408d6aadf445a.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script>
+  
+  var script_url = "https://script.google.com/macros/s/AKfycbyTXEdTnSeD7YOoMR77sw0PZtKA19Byu6P01VOWf5UHBApH0Lc/exec";
+  
+  // Make an AJAX call to Google Script
+  function insert_value() {
+    
+	$("#re").css("visibility","hidden");
+	 document.getElementById("loader").style.visibility = "visible";
+	$('#mySpinner').addClass('spinner');
 
-	    <script type="text/javascript">
-	    	function imEmbedded() { return (window.location != parent.location); }
+var id1=	$("#id").val();
+	var name= $("#name").val();
+	
+	
+    var url = script_url+"?callback=ctrlq&name="+name+"&id="+id1+"&action=insert";
+  
 
-	    	if (imEmbedded()) {
-	    		window.location = '/a/t/aaae394a5962?embedded=true';
-	    	}
-	    </script>
-  </head>
-  <body>
-    <div class="container-fluid">
+    var request = jQuery.ajax({
+      crossDomain: true,
+      url: url ,
+      method: "GET",
+      dataType: "jsonp"
+    });
 
-  <div class="row mt-3">
-    <div class="col-12">
+  }
 
-        <table class="table table-hover">
-          <thead class="thead-dark">
-            <tr>
-                <th>Name</th>
-                <th>Wood_Type</th>
-                <th>Pieces_of_Wood</th>
-                <th>Thickness</th>
-                <th>Width</th>
-                <th>Length</th>
-                <th>Grade</th>
-                <th>Project_Name</th>
-                <th>Hardware_Cost</th>
-            </tr>
-          </thead>
-          <tbody>
-              <tr>
-                  <td>Nick</td>
-                  <td>4</td>
-                  <td>56</td>
-                  <td>9</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-              </tr>
-          </tbody>
-        </table>
 
-    </div>
-  </div>
+  
+  
+ 
+  
+  
+  function update_value(){
+	$("#re").css("visibility","hidden");
+     document.getElementById("loader").style.visibility = "visible";
+	
+	
+var id1=	$("#id").val();
+	var name= $("#name").val();
+	
+	
+	
+    var url = script_url+"?callback=ctrlq&name="+name+"&id="+id1+"&action=update";
+  
 
-  <div class="row">
-    <div class="col-12">
-      <div class="powered-by mb-1">
-        <a href="https://sheetsu.com/?utm_source=readymade&utm_medium=website&utm_campaign=table" target="_blank">
-        </a>
-      </div>
-    </div>
-  </div>
+    var request = jQuery.ajax({
+      crossDomain: true,
+      url: url ,
+      method: "GET",
+      dataType: "jsonp"
+    });
 
+	
+  }
+
+  
+ 
+  
+  
+  function delete_value(){
+	$("#re").css("visibility","hidden");
+     document.getElementById("loader").style.visibility = "visible";
+	$('#mySpinner').addClass('spinner');
+var id1=	$("#id").val();
+	var name= $("#name").val();
+	
+	
+    var url = script_url+"?callback=ctrlq&name="+name+"&id="+id1+"&action=delete";
+  
+
+    var request = jQuery.ajax({
+      crossDomain: true,
+      url: url ,
+      method: "GET",
+      dataType: "jsonp"
+    });
+
+  }
+
+
+  
+  
+  // print the returned data
+  function ctrlq(e) {
+  
+	
+	$("#re").html(e.result);
+	$("#re").css("visibility","visible");
+	read_value();
+	
+  }
+  
+  
+
+  
+function read_value() {
+
+$("#re").css("visibility","hidden");
+   
+   document.getElementById("loader").style.visibility = "visible";
+ var url = script_url+"?action=read";
+
+$.getJSON(url, function (json) {
+
+    // Set the variables from the results array
+   
+   
+  
+
+        // CREATE DYNAMIC TABLE.
+        var table = document.createElement("table");
+
+		
+
+        var header = table.createTHead();
+		var row = header.insertRow(0);     
+		var cell1 = row.insertCell(0);
+		var cell2 = row.insertCell(1);
+	
+		cell1.innerHTML = "<b>ID</b>";
+		cell2.innerHTML = "<b>Name</b>";
+        
+        // ADD JSON DATA TO THE TABLE AS ROWS.
+        for (var i = 0; i < json.records.length; i++) {
+
+            tr = table.insertRow(-1);
+				var tabCell = tr.insertCell(-1);
+                tabCell.innerHTML = json.records[i].ID;
+				tabCell = tr.insertCell(-1);
+				tabCell.innerHTML = json.records[i].NAME;
+            }
+      
+
+        // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
+        var divContainer = document.getElementById("showData");
+        divContainer.innerHTML = "";
+        divContainer.appendChild(table);
+		document.getElementById("loader").style.visibility = "hidden";
+		$("#re").css("visibility","visible");
+    });
+	}
+  
+  </script>
+
+
+  
+  
+</head>
+<body>
+<div align="center">
+<h1>CRUD OPERATION ON GOOGLE SPREAD SHEET, WEB APPLICATION USING GOOGLE APP SCRIPT .</h1> 
+<p>This is simple application, You can develop your own logic based on your requiremnets.<p>
+<p>Be careful with the parameters you are sending, it should match the parameters that are recived in google app script.</p>
+
+
+<form >
+ID
+<input type = "text" name ="id" id="id">
+Name
+<input type = "text" name ="name" id="name">
+
+</form>
+
+<div id="loader"></div>
+
+<p id="re"></p>
+
+<input type = "button"  id = "b1" onClick="insert_value()" value = "Insert"></input>
+<input type="button" onclick="read_value()" value="Read" />
+<input type="button" onclick="update_value()" value="Update" />
+<input type="button" onclick="delete_value()" value="Delete" />
+<a href="https://docs.google.com/spreadsheets/d/1OmqvphAqP4WEcrsZAMNNeL2YVn3RJffVOIGgdPiyEVA/edit?usp=sharing" target="_blank">Click here to open Spread Sheet </a>
+<div id="showData"></div>
 </div>
-
-  <script type='text/javascript'  src="https:////sheetsu.com/a6f874923f491993fc2e06d748eac61b703843ab4d524bbd605f814eae8bf3ac/inject.js"></script>
 </body>
-</html>
+<div align="center">
+<p>ANDROID LABS 2017 | All Rights Reserved</p>
+</div>
+<html>
+
+
